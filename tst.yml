@@ -1,0 +1,31 @@
+name: myshell
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'The reason for running the workflow'
+        required: true
+        default: '手动执行'
+#      actions:
+#        description: "action: run "
+#        required: true
+#      env:
+#        description: "environment: Input the url of site. If left blank, the main secrets setting will be used by default."
+#        default: ""
+#        required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: '测试过程'
+        run: |
+          echo $GITHUB_WORKSPACE
+          pwd
+          cd $GITHUB_WORKSPACE
+          pwd
+          ls -l 
+          #sh tst.sh
+
